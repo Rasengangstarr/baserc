@@ -8,6 +8,8 @@ set nocompatible
 filetype plugin on
 
 call plug#begin()
+Plug 'Rasengangstarr/vascii'
+Plug 'Rasengangstarr/Vimcats'
 Plug 'preservim/NERDTree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
@@ -87,19 +89,6 @@ function Vimhabits()
 	 
 endfunction
 
-function Vascii()
-	let currentLine = getline(".")
-	if stridx(currentLine, "[vascii:")
-		echom "Not a vascii tag."
-		return
-	endif
-	let filePath = split(split(currentLine, ':')[1], ']')[0]	
-	let image = system('jp2a --width=60 ' . filePath)
-	d
-	exe "normal! a" . image . "\n\<Esc>"
-endfunction
-
-nnoremap <C-j> :call Vascii() <CR>
 
 
 
