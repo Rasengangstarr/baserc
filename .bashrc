@@ -17,5 +17,9 @@ export PATH="/home/dw/docs/projects/EzWall/ezrice.sh:$PATH"
 
 PS1='[\u@\h \W]\$ '
 
+# Only works if you have the quotes.txt file
+
+shuf -n 1 ~/docs/projects/linusquotes/quotes.txt
+
 eval "$(starship init bash)"
 
